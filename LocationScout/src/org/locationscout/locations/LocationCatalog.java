@@ -8,25 +8,25 @@ import javax.jws.WebService;
 
 import org.locationscout.businessservices.LocationServiceImpl;
 
-@WebService
+@WebService(serviceName="LocationService", targetNamespace="http://www.locationscout.com")
 public class LocationCatalog {
 
 	LocationServiceImpl locationService=new LocationServiceImpl();
 	
-	@WebMethod
+	@WebMethod(action="fetch_locations", operationName="fetchLocations")
 	public List<String> getLocationCategories(){
 		
 		return locationService.getLocationCategories();
 		
 	}
 	
-	@WebMethod
-	public List<String> getProducts(String category){
-		
-		return locationService.getProducts(category);
+	@WebMethod(exclude=true)
+	public List<String> getLocations(String category){
+		return new ArrayList<>();
+		// return locationService.getLocations(category);
 	}
 	
-	@WebMethod
+	@WebMethod(exclude=true)
 	public boolean addProduct(String product,String category){
 		return locationService.addProduct(product, category);
 	}

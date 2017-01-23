@@ -3,6 +3,8 @@ package org.locationscout.businessservices;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class LocationServiceImpl {
 
 	List<String> pools=new ArrayList<>();
@@ -16,19 +18,22 @@ public class LocationServiceImpl {
 		parks.add("park2");
 		
 	}
-	
+	/*
 	// Gets Products for a given category
-	public List<String> getProducts(String category){
+	public List<String> getLocations(String category){
+		// List<Location> locations=new ArrayList<>();
+		// Location location=new Location("CubbonPark", "Park");
+		// locations.add(location);
 		switch (category) {
 		case "Pool":
-			return pools;
+			return "Pool";
 		case "Park":
-			return parks;
+			return "Park";
 		default:
-			return null;
+			return "XXX";
 		}
 	}
-	
+	**/
 	// Get all categories
 	public List<String> getLocationCategories(){
 		List<String> locationCategories=new ArrayList<>();
